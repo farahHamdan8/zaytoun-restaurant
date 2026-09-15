@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-zinc-950 text-zinc-100 antialiased;
+  scroll-behavior: smooth;
+}
+button, button:hover {
+  font-size: 14px !important;
+}
+/* Font pairing switches with document direction so Arabic gets faces
+   built for the script instead of a Latin serif rendering it poorly. */
+[dir='ltr'] body {
+  font-family: 'Manrope', sans-serif;
+}
+[dir='rtl'] body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+[dir='ltr'] .font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+[dir='rtl'] .font-display {
+  font-family: 'Markazi Text', serif;
+}
+
+::selection {
+  @apply bg-gold/30 text-zinc-50;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-zinc-950;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-700 rounded-full;
+}
+
+/* Respect reduced-motion preferences globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus ring, consistent across interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #ffaa0062;
+  outline-offset: 2px;
+}
