@@ -19,7 +19,7 @@ export default function App() {
       <CartProvider>
         <Navbar />
         <main>
-          <Hero />
+          {/* <Hero /> */}
           <MenuSection />
           <ReservationSection />
           <StorySection />
